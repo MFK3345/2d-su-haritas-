@@ -1,0 +1,11 @@
+{
+  "Turkey": {
+    "population": "85.3 milyon",
+    "gdp": "905 milyar $",
+    "description": "Türkiye su kaynakları açısından zengin bir ülkedir. Fırat ve Dicle nehirleri ülkenin en önemli su kaynaklarıdır.",
+    "map": "img/turkey-water.png",
+    "flag": "img/turkey-flag.png",
+    "reservoir": [720, 740, 760, 800, 850, 870, 890, 910, 920, 940],
+    "usage": [70, 20, 10]
+  }
+}

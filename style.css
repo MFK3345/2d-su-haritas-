@@ -1,0 +1,116 @@
+:root{
+  --bg:#f6f8fb; --border:#dbe1ea; --ink:#1f2a37; --muted:#6b7280;
+  --green:#10b981; --yellow:#f59e0b; --red:#ef4444;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; height:100vh; display:flex; font:14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink);
+}
+
+/* Map */
+#map{ flex:3; height:100vh; }
+
+/* Side panel */
+#info{
+  flex:1; max-width:460px; background:var(--bg); border-left:1px solid var(--border);
+  padding:16px; overflow:auto;
+}
+
+.info-header{
+  display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px;
+}
+.title{display:flex; align-items:center; gap:10px}
+.flag{ width:34px; height:24px; object-fit:cover; border:1px solid var(--border); border-radius:4px; display:none}
+h2{ font-size:20px; margin:0; color:#0f6ad6; }
+.muted{ color:var(--muted); }
+
+.close-btn{
+  border:0; background:#eef2f7; color:#475569; padding:6px 10px; border-radius:8px; cursor:pointer;
+}
+.close-btn:hover{ background:#e3e9f3; }
+
+#stats{ display:grid; grid-template-columns:1fr; gap:4px; margin:8px 0 10px; }
+.water-map{
+  width:100%; border:1px solid var(--border); border-radius:8px; margin:6px 0 14px; background:#fff;
+}
+
+/* Charts */
+.charts{ display:grid; gap:12px; }
+.chart-card{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:12px;
+  box-shadow:0 0 0 rgba(0,0,0,0.02);
+}
+.chart-card h3{ margin:0 0 8px; font-size:15px; color:#0b1220; }
+
+/* Responsive */
+@media (max-width: 920px){
+  body{ flex-direction:column; }
+  #map{ height:55vh; }
+  #info{ max-width:none; height:45vh; }
+}
+
+body { margin:0; display:flex; height:100vh; font-family:system-ui; }
+
+#map { flex:3; }
+
+#info {
+  flex:1;
+  max-width:450px;
+  background:#f6f8fb;
+  border-left:2px solid #dbe1ea;
+  padding:15px;
+  overflow-y:auto;
+}
+
+.info-header {
+  display:flex; align-items:center; justify-content:space-between;
+}
+
+.flag {
+  width:40px; height:28px;
+  border:1px solid #ccc; border-radius:5px; margin-right:8px;
+}
+
+.country-watermap {
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  border:1px solid #ccc;
+  margin:10px 0 16px;
+  object-fit:cover;
+  background:#fff;
+}
+
+.chart-card {
+  background:#fff;
+  border:1px solid #dbe1ea;
+  border-radius:12px;
+  padding:10px;
+  margin-bottom:12px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.05);
+}
+
+.close-btn {
+  background:#e7ecf4;
+  border:0; border-radius:6px; padding:6px 10px; cursor:pointer;
+}
+#cesiumContainer {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.toggle3d-btn {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.toggle3d-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}

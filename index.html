@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dünya Su Kaynakları Haritası</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div id="map"></div>
+
+  <aside id="info">
+    <div class="info-header">
+      <div class="title">
+        <img id="flag" class="flag" alt="Bayrak"/>
+        <h2 id="country-name">Dünya Su Kaynakları</h2>
+      </div>
+      <button class="close-btn" onclick="resetInfo()">✕</button>
+    </div>
+
+    <div id="stats">
+      <div><b>Nüfus:</b> <span id="pop">—</span></div>
+      <div><b>GSYİH:</b> <span id="gdp">—</span></div>
+      <div><b>Su Puanı:</b> <span id="score">—</span>/10</div>
+      <p id="water-text" class="muted">Bir ülkeye tıklayarak bilgi alın.</p>
+    </div>
+
+    <!-- 🌊 Ülkeye özel su haritası -->
+    <img id="country-watermap" class="country-watermap" alt="Su Haritası" src="watermaps/default.jpg"/>
+
+    <!-- 📈 Grafikler -->
+    <section class="chart-card">
+      <h3>Son 10 Yıl Tatlı Su Rezervi</h3>
+      <canvas id="reserveChart" height="120"></canvas>
+    </section>
+
+    <section class="chart-card">
+      <h3>Kullanım Alanları (Tarım / Evsel / Sanayi)</h3>
+      <canvas id="usageChart" height="140"></canvas>
+    </section>
+  </aside>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.123/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.123/Build/Cesium/Widgets/widgets.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
